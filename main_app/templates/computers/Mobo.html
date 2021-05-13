@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Total ${{computer.price}}</h1>
+<h1>Choose your Motherboard </h1>
+
+{% for mobo in mobos%}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">
+        <span >{{mobo.name}}</span>
+        <br>
+        
+        <table>
+        
+          <tr><td>Price</td><td>${{mobo.price}}</td></tr>
+          <tr><td>Form</td><td>{{mobo.get_form_display}}</td></tr>
+
+        </table>
+    </div>
+    <div class="card-action">
+      <form action="{% url 'addMobo' computer.id mobo.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn">Add</button>
+      </form>
+      </div>
+      </div>
+{% endfor %}
+
+{% endblock %}

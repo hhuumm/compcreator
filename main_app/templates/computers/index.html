@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for chip in processors%}
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">
+        <span >{%chip.chip_model%}</span>
+    </div>
+    <div class="card-action">
+      <form action="{% url 'choice_amd' computer.id chipid %}" method="post">
+      
+        <button type="submit" class="btn">Add</button>
+      </form>
+     {% endfor %}
+
+
+{% endblock %}

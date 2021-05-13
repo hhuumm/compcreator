@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Total ${{computer.price}}</h1>
+<h1>Choose your PowerSupply </h1>
+
+{% for psu in supplies%}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">
+        <span >{{psu.name}}</span>
+        <table>
+          
+          <tr><td>Wattage</td><td>{{psu.wattage}} watts</td></tr>
+          <tr><td>Certification</td><td>{{psu.get_cert_display}}</td></tr>
+          <tr><td>Price</td><td>${{psu.price}}</td></tr>
+        </table>
+
+
+    </div>
+    <div class="card-action">
+      <form action="{% url 'addSupply' computer.id psu.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn">Add</button>
+      </form>
+      </div>
+      </div>
+{% endfor %}
+
+{% endblock %}

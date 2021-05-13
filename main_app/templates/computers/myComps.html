@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>My Computers</h1>
+{%if computers %}
+{% for comp in computers %}
+<a href="{%url 'compDet' comp.id%}">
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">
+        <span >{{comp.name}}</span>
+       
+
+    </div>
+    <br>
+</a>
+
+{% endfor %}
+
+{%else%}
+
+<p>You have no computers</p>
+<a href="{% url 'create'%}">Create A New Computer</a>
+
+{%endif%}
+
+{% endblock %} 

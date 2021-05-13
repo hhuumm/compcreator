@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Name Your Computer</h1>
+<form action="{% url 'createComp' %}" method="post">
+{% csrf_token %}
+{{ nameForm.as_p }}
+<input type="submit" class="btn" value="Create Computer">
+</form>
+
+
+{% endblock %} 

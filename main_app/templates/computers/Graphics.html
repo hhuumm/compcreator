@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Total ${{computer.price}}</h1>
+<h1>Choose your Graphics Card </h1>
+
+{% for card in graphics%}
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">
+        <span >{{card.get_brand_display}} {{card.graphics_model}}</span>
+        <table>
+          <tr><td>Ram</td><td>{{card.ram}} GB</td></tr>
+          <tr><td>Wattage</td><td>{{card.tdp}} watts</td></tr>
+          <tr><td>Price</td><td>${{card.price}}</td></tr>
+
+        </table>
+    </div>
+    <div class="card-action">
+      <form action="{% url 'addCard' computer.id card.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn">Add</button>
+      </form>
+      </div>
+      </div>
+     {% endfor %}
+
+
+{% endblock %}

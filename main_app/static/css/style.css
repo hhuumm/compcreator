@@ -1,0 +1,15 @@
+.nav-wrapper, .page-footer{
+
+background-color: #2c7da0;
+}
+
+.container{
+    justify-content: center;
+    align-content: center;
+}
+
+
+header{
+    background-color: blue;
+}
+

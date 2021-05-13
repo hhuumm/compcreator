@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>All Computer Ideas</h3>
+{%if computers %}
+{% for comp in computers %}
+<a href="{%url 'compDet' comp.id%}">
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">
+          {%if comp.user == user %}
+        <span > {{comp.name}}</span>
+    </div>
+    <br>
+    
+          {%else%}
+    <span >{{comp.user.username}}'s {{comp.name}}</span>
+</div>
+<br>
+</a>
+        {%endif%}
+        {%endfor%}
+{%else%}
+
+<p>There are no computers</p>
+<a href="{% url 'create'%}">Create A New Computer</a>
+
+
+{%endif%}
+
+
+{% endblock %}

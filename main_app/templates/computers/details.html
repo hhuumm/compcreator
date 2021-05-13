@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2> {{computer.user.username}}s {{computer.name}}</h2>
+<table>
+<tbody>
+<tr><td>Processor</td><td>{{computer.cpu.get_brand_display}} {{computer.cpu.chip_model}}</td></tr>
+<tr><td>Motherboard</td> <td>{{computer.mobo.name}} {{computer.mobo.get_form_display}}</td></tr>
+<tr><td>Ram</td> <td>{{computer.ram.name}} {{computer.ram.amount}}GB</td></tr>
+<tr><td>Graphics Card</td> <td>{{computer.gpu.get_brand_display}} {{computer.gpu.graphics_model}}</td></tr>
+<tr><td>Power Supply</td> <td>{{computer.psu.name}} {{computer.psu.wattage}} watts</td></tr>
+<tr><td>Case</td> <td>{{computer.case.name}}</td></tr>
+<tr><td>Total</td> <td>${{computer.price}}</td></tr>
+
+{%if computer.user == user%}
+<tr><td> <a href="{%url 'delComp' computer.id%}" style="color:red">Delete</a> </td><td></td><tr>
+{%endif%}
+
+</tbody>
+
+
+
+
+
+{% endblock %}
