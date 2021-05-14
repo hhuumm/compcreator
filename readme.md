@@ -2,6 +2,10 @@
 
 Comp Creator is the go to place for creating your computer ideas without worrying about compatibility between componenets. Go and Try it out!
 
+
+## Trello
+[Link](https://trello.com/b/US9vjwG5/unit-4)
+
 ## Try It!
 
 [CompCreator](https://compcreator.herokuapp.com)
