@@ -3,6 +3,9 @@
 Comp Creator is the go to place for creating your computer ideas without worrying about compatibility between componenets. Go and Try it out!
 
 
+# Run Command
+python3 manage.py runserver
+
 ## Trello
 [Link](https://trello.com/b/US9vjwG5/unit-4)
 
