@@ -77,7 +77,9 @@ WSGI_APPLICATION = 'compcreator.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'computercreator',
+        'NAME': 'compcreator',
+        'USER':'postgres',
+        'PASSWORD':'Drowssaphamid2032'
     }
 }
 
