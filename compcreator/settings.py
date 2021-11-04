@@ -11,9 +11,28 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os,sys
+sys.path.insert(0, "..\venv\Lib\site-packages")
+
+try:
+    import environ
+except ImportError:
+    print('No Import')
+
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Initialise environment variables
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
+# Take environment variables from .env file
 
 
 # Quick-start development settings - unsuitable for production
@@ -77,9 +96,9 @@ WSGI_APPLICATION = 'compcreator.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'compcreator',
-        'USER':'postgres',
-        'PASSWORD':'Drowssaphamid2032'
+        'NAME': env('NAME'),
+        'USER':env('USER'),
+        'PASSWORD':env('PASSWORD'),
     }
 }
 
