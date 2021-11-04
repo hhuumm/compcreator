@@ -1,11 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<img style="height:200px;width:200px;margin-left: 20%;"src="http://www.clker.com/cliparts/k/d/6/3/P/y/generic-microchip-hi.png">
-{%if user.is_authenticated %}
-<h3>Now go make a computer!</h3>
-{% else%}
-<h3 style="margin-left:8%;">Go Sign Up/In!</h3>
-{%endif%}
 
-{% endblock %}
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+      <h1>Computer Creator</h1>
+      <p>
+        A simple template for creating computers
+        <br />
+
+        {% if user.is_authenticated %}
+        <div class="container">
+        <li><a href="{% url 'create' %} ">Make a Computer</a></li>
+        <li><a href="{% url 'allComp' %} ">All Computer Ideas</a></li>
+        <li><a href="{% url 'myComp' %} ">My Computers List</a></li>
+        <li><a href="{% url 'logout' %}">Log Out</a></li>
+        {%else%}
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'login' %}">Log In</a></li>
+        {% endif %}
+      </div>
+        <a href="https://hamidportfolio.azurewebsites.net/"
+          >For More Sites and Projects</a
+        >
+      </p>
+    </header>
+
+    <!-- Signup Form -->
+
+
+    {% endblock %}
