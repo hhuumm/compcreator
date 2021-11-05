@@ -107,6 +107,10 @@ nav,
 section {
   display: block;
 }
+.menuitem:hover
+{
+  font-size: larger;
+}
 
 body {
   line-height: 1;
@@ -441,7 +445,6 @@ a:hover {
   border-bottom-color: transparent;
   color: #1cb495 !important;
   text-decoration: none;
-  font-size: larger;
 }
 
 strong,

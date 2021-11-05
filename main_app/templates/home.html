@@ -13,17 +13,17 @@
     <div class="container">
         {% if user.is_authenticated %}
         <ul>
-        <li><a href="{% url 'create' %} ">Make a Computer</a></li>
-        <li><a href="{% url 'allComp' %} ">All Computer Ideas</a></li>
-        <li><a href="{% url 'myComp' %} ">My Computers List</a></li>
+        <li><a class="menuitem" href="{% url 'create' %} ">Make a Computer</a></li>
+        <li><a class="menuitem" href="{% url 'allComp' %} ">All Computer Ideas</a></li>
+        <li><a class="menuitem" href="{% url 'myComp' %} ">My Computers List</a></li>
 
         <li><a href="{% url 'logout' %}">Log Out</a></li>
     </ul>
         {%else%}
         <ul>
-        <li><a href="{% url 'login' %}">Log In</a></li>
-        <li><a href="{% url 'signup' %}">Sign Up</a></li> 
-        <li><a href="{% url 'about' %} ">About</a></li>
+        <li><a class="menuitem" href="{% url 'login' %}">Log In</a></li>
+        <li><a class="menuitem" href="{% url 'signup' %}">Sign Up</a></li> 
+        <li><a class="menuitem" href="{% url 'about' %} ">About</a></li>
         </ul>
         {% endif %}
         <a href="https://hamidportfolio.azurewebsites.net/"
