@@ -12,18 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os,sys
-sys.path.insert(0, "..\venv\Lib\site-packages")
-
-try:
-    import environ
-except ImportError:
-    print('No Import')
-
-
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
 
 
 
