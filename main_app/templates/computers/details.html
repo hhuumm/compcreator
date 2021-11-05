@@ -3,19 +3,27 @@
 <h2> {{computer.user.username}}s {{computer.name}}</h2>
 <table>
 <tbody>
-<tr><td>Processor</td><td>{{computer.cpu.get_brand_display}} {{computer.cpu.chip_model}}</td><td><a href="{{computer.cpu.link}}"target="_blank">Link</a></td></tr>
-<tr><td>Motherboard</td> <td>{{computer.mobo.name}} {{computer.mobo.get_form_display}}</td><td><a href="{{computer.mobo.link}}"target="_blank">Link</a></td></tr>
-<tr><td>Ram</td> <td>{{computer.ram.name}} {{computer.ram.amount}}GB</td><td><a href="{{computer.ram.link}}"target="_blank">Link</a></td></tr>
-<tr><td>Graphics Card</td> <td>{{computer.gpu.get_brand_display}} {{computer.gpu.graphics_model}}</td><td><a href="{{computer.gpu.link}}"target="_blank">Link</a></td></tr>
-<tr><td>Power Supply</td> <td>{{computer.psu.name}} {{computer.psu.wattage}} watts</td><td><a href="{{computer.psu.link}}"target="_blank">Link</a></td></tr>
-<tr><td>Case</td> <td>{{computer.case.name}}</td><td><a href="{{computer.case.link}}"target="_blank">Link</a></td></tr>
-<tr><td>Total</td> <td>${{computer.price}}</td></tr>
+    <tr><td>Processor</td><td>{{computer.cpu.get_brand_display}} {{computer.cpu.chip_model}}</td><td>${{computer.cpu.price}}</td><td><a href="{{computer.cpu.link}}"target="_blank">Link</a></td></tr>
+    <tr><td>Motherboard</td> <td>{{computer.mobo.name}} {{computer.mobo.get_form_display}}</td><td>${{computer.mobo.price}}</td><td><a href="{{computer.mobo.link}}"target="_blank">Link</a></td></tr>
+    <tr><td>Ram</td> <td>{{computer.ram.name}} {{computer.ram.amount}}GB</td><td>${{computer.ram.price}}</td><td><a href="{{computer.ram.link}}"target="_blank">Link</a></td></tr>
+    <tr><td>Graphics Card</td> <td>{{computer.gpu.get_brand_display}} {{computer.gpu.graphics_model}}</td><td>${{computer.gpu.price}}</td><td><a href="{{computer.gpu.link}}"target="_blank">Link</a></td></tr>
+    <tr><td>Power Supply</td> <td>{{computer.psu.name}} {{computer.psu.wattage}} watts</td><td>${{computer.psu.price}}</td><td><a href="{{computer.psu.link}}"target="_blank">Link</a></td></tr>
+    <tr><td>Case</td> <td>{{computer.case.name}}</td><td>${{computer.case.price}}</td><td><a href="{{computer.case.link}}"target="_blank">Link</a></td></tr>
+    <tr><td>Total</td> <td>${{computer.price}}</td></tr>
 
 {%if computer.user == user%}
 <tr><td> <a href="{%url 'delComp' computer.id%}" style="color:red">Delete</a> </td><td></td><tr>
 {%endif%}
 
 </tbody>
+</table>
+
+<ul>
+    <li><a href="{% url 'allComp' %} ">All Computer Ideas</a></li>
+    <li><a href="{% url 'myComp' %} ">My Computers List</a></li>
+    <li><a href="{% url 'home' %} ">Home</a></li>
+</ul>
+
 
 
 

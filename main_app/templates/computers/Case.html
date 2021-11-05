@@ -4,24 +4,28 @@
 <h1>Choose your Case </h1>
 
 {% for case in cases%}
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">
+<div class="container">
         <span >{{case.name}}</span>
         <table>
         
           <tr><td>Price</td><td>${{case.price}}</td></tr>
           <tr><td>Form</td><td>{{case.get_form_display}}</td></tr>
+          <tr>
+            <td></td>
+            <td>      
+              <form action="{% url 'addCase' computer.id case.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">Add</button>
+            </form>
+          </td>
+
+          </tr>
 
         </table>
     </div>
-    <div class="card-action">
-      <form action="{% url 'addCase' computer.id case.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn">Add</button>
-      </form>
-      </div>
+    </div>
       </div>
 {% endfor %}
+
 
 {% endblock %}

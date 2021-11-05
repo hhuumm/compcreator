@@ -1,21 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>All Computer Ideas</h3>
+<h1>All Computer Ideas</h1>
 {%if computers %}
 {% for comp in computers %}
 <a href="{%url 'compDet' comp.id%}">
-<div class="card">
-    <div class="card-content">
-      <span class="card-title">
+<div class="container">
           {%if comp.user == user %}
-        <span > {{comp.name}}</span>
+        <h4 > {{comp.name}}</h4>
     </div>
     <br>
-    
           {%else%}
-    <span >{{comp.user.username}}'s {{comp.name}}</span>
-</div>
-<br>
+    <h4>{{comp.user.username}}'s {{comp.name}}</h4>
 </a>
         {%endif%}
         {%endfor%}

@@ -1,28 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 <h1>Total {{computer.price}}</h1>
 <h1>Choose your Ram </h1>
 
 {% for ram in rams%}
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">
-        <span >{{ram.name}}</span>
+<div class="container">
+        <h3>{{ram.name}}</h3>
         <table>
           <tr><td>Amount</td><td>{{ram.amount}} GB</td></tr>
           <tr><td>Quantity</td><td>{{ram.quantity}}</td></tr>
           <tr><td>Speed</td><td>{{ram.speed}} MHz</td></tr>
           <tr><td>Price</td><td>${{ram.price}}</td></tr>
+          <tr>
+            <td></td>
+            <td>   
+              <form action="{% url 'addRam' computer.id ram.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn">Add</button>
+              </form>
+            </td>
+          </tr>
 
         </table>
     </div>
-    <div class="card-action">
-      <form action="{% url 'addRam' computer.id ram.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn">Add</button>
-      </form>
+
       </div>
-      </div>
+
 {% endfor %}
 
 {% endblock %}

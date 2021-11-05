@@ -1,29 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
 <h1>Choose your Processor </h1>
 
 {% for chip in processors%}
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">
-        <span >{{chip.chip_model}}</span>
+  <div class="container">
+        <h3 >{{chip.chip_model}}</h3>
         <table>
           <tr><td>Cores</td><td>{{chip.cores}}</td></tr>
           <tr><td>Threads</td><td>{{chip.threads}}</td></tr>
           <tr><td>Effective Speed</td><td>{{chip.speed}} GHz</td></tr>
           <tr><td>Wattage</td><td>{{chip.tdp}} watts</td></tr>
           <tr><td>Price</td><td>${{chip.price}}</td></tr>
+          <tr>
+            <td></td>
+            <td>
+            <form action="{% url 'addChip' computer.id chip.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">Add</button>
+            </form>
+          </td>
+          </tr>
 
         </table>
     </div>
-    <div class="card-action">
-      <form action="{% url 'addChip' computer.id chip.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn">Add</button>
-      </form>
-      </div>
-      </div>
 {% endfor %}
 
 {% endblock %}

@@ -5,10 +5,9 @@
 {%if computers %}
 {% for comp in computers %}
 <a href="{%url 'compDet' comp.id%}">
-<div class="card">
-    <div class="card-content">
-      <span class="card-title">
-        <span >{{comp.name}}</span>
+<div class="container">
+   
+        <h5 >{{comp.name}}</h5>
        
 
     </div>
