@@ -2,18 +2,17 @@
 {% block content %}
 <h1>All Computer Ideas</h1>
 {%if computers %}
+<table>
+  <tbody>
+    
+
 {% for comp in computers %}
-<a href="{%url 'compDet' comp.id%}">
-<div class="container">
-          {%if comp.user == user %}
-        <h4 > {{comp.name}}</h4>
-    </div>
-    <br>
-          {%else%}
-    <h4>{{comp.user.username}}'s {{comp.name}}</h4>
-</a>
-        {%endif%}
-        {%endfor%}
+<tr><a href="{%url 'compDet' comp.id%}">
+    <h4>{{comp.name}}</h4>
+</a></tr>
+{%endfor%}
+</tbody>
+</table>
 {%else%}
 
 <p>There are no computers</p>
