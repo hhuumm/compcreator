@@ -1,9 +1,13 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>About</h1>
 
-<p>This is a Django excercise, and will allow you to see what your computer would cost in an ideal world</p>
+<p>
+  This is a Django excercise, and will allow you to see what your computer would
+  cost in an ideal world
+</p>
+<ul>
+  <li><a href="{% url 'home' %} ">Return</a></li>
+</ul>
 
 {% endblock %}
